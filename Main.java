@@ -4,8 +4,7 @@ import java.util.*;
 import java.util.Random;
 
 class Main{
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws Exception {
         int p1C = 0; //player1
         int p2C = 0; //player2 or bot
         boolean bot = true;
@@ -24,8 +23,7 @@ class Main{
         String temp = sc.next();
         System.out.println("Type Game you Wish To Play (again).");
         temp = sc.next();
-        if(temp.equals("war"))
-        {
+        if(temp.equals("war")) {
             Random r = new Random();
             p1C = 26;
             p2C = 26;
@@ -66,7 +64,7 @@ class Main{
                         else if(tempInput.equals("bottom"))
                         {
                             int i2 = player1c.size();
-                            p1tempCard = player1c.get(i2);
+                            p1tempCard = player1c.get(i2 - 1);
                             i = 0;
                         }
                         else if(tempInput.equals("shuffle"))
@@ -146,7 +144,7 @@ class Main{
                             else if(tempInput.equals("bottom"))
                             {
                                 int i2 = player1c.size();
-                                p1tempCard = player1c.get(i2);
+                                p1tempCard = player1c.get(i2 - 1);
                             }
                             else if(tempInput.equals("shuffle"))
                             {
@@ -215,6 +213,16 @@ class Main{
                         tempPrint = "King";
                     }
                     System.out.println("Player 2 Card Rank: " + tempPrint);
+                    System.out.println("""
+┌───────────┐
+│ ☻         │
+│           │
+│           │
+│     1     │
+│           │
+│           │
+│         ☻ │
+└───────────┘""");
                     cardTurn = 0;
                 }
             }
